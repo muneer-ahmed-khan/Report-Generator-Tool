@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Report Generator Tool </title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+</head>
+
+<body>
+  <div class="testbox">
+    <form onsubmit="submitForm(event); return false">
+      <div class="banner">
+        <h1>Report Generator Tool</h1>
+      </div>
+      <div class="item">
+        <label for="title">Title<span>*</span></label>
+        <div class="title-item">
+          <input id="title" type="text" name="title" placeholder="Enter Title" />
+        </div>
+      </div>
+      <div class="item">
+        <label for="ticketNumber">Ticket Number<span>*</span></label>
+        <div class="ticket-item">
+          <input id="ticketNumber" type="text" name="ticketNumber" placeholder="Ticket Number" />
+        </div>
+      </div>
+      <div class="item">
+        <label for="ticketOwner">Ticket Owner<span>*</span></label>
+        <div class="ticket-owner-item">
+          <input id="ticketOwner" type="text" name="ticketOwner" placeholder="Ticket Owner" />
+        </div>
+      </div>
+      <div class="item">
+        <label for="date">Date<span>*</span></label>
+        <input id="date" type="date" name="date" />
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="item">
+        <label for="testCases">Number of Test Cases:<span>*</span></label>
+        <select name="testCases" id="testCases" onchange="addFields(event)">
+          <option value="#" disabled selected>Select Number of Test Cases</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <!-- the place where test cases will added -->
+      <div id="container">
+
+      </div>
+      <div class="btn-block">
+        <button type="submit">Generate File</button>
+      </div>
+    </form>
+  </div>
+
+  <script type='text/javascript' src="./script.js" defer></script>
+
+</body>
+
+</html>
